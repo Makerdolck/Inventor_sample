@@ -34,6 +34,7 @@
             this.buttonGetFaceNumber = new System.Windows.Forms.Button();
             this.buttonAssemble = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.textBoxSample = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonOpenInventor
@@ -86,11 +87,21 @@
             this.buttonAssemble.UseVisualStyleBackColor = true;
             this.buttonAssemble.Click += new System.EventHandler(this.ButtonAssemble_Click);
             // 
+            // textBoxSample
+            // 
+            this.textBoxSample.Location = new System.Drawing.Point(372, 175);
+            this.textBoxSample.Name = "textBoxSample";
+            this.textBoxSample.Size = new System.Drawing.Size(79, 20);
+            this.textBoxSample.TabIndex = 22;
+            this.textBoxSample.Text = "11.1";
+            this.textBoxSample.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(501, 304);
+            this.Controls.Add(this.textBoxSample);
             this.Controls.Add(this.buttonAssemble);
             this.Controls.Add(this.buttonGetFaceNumber);
             this.Controls.Add(this.buttonGetEdgeNumber);
@@ -100,6 +111,7 @@
             this.Name = "Form1";
             this.Text = "Конфигуратор";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -110,6 +122,7 @@
         private System.Windows.Forms.Button buttonGetFaceNumber;
         private System.Windows.Forms.Button buttonAssemble;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.TextBox textBoxSample;
     }
 }
 

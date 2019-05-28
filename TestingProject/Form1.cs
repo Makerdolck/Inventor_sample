@@ -41,6 +41,7 @@ namespace TestingProject
 
         private AssemblyDocument AssemblyDocName;
 
+        bool FalseWrite = false;
 
         private void CreateDoc(String str)
         {
@@ -72,6 +73,12 @@ namespace TestingProject
 
         private void ButtonBuild_Click(object sender, EventArgs e)
         {
+            if (FalseWrite)
+            {
+                MessageBox.Show("Неправильно заданы входные параметры\nИсправьте красные поля");
+                return;
+            }
+
             string docName = "Первая деталь";
             CreateDoc(docName);
 
@@ -364,6 +371,42 @@ namespace TestingProject
             {
                 return 1;
             }
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            sam(textBoxSample);
+        }
+
+        private void sam(System.Windows.Forms.TextBox name)
+        {
+            string str = name.Text;
+
+            if ((str == null) || (str == ""))
+            {
+                name.BackColor = System.Drawing.Color.FromArgb(255, 60, 6);
+                FalseWrite = true;
+                return;
+            }
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (((!(str[i] >= '0' && str[i] <= '9') && (str[i] != ',')) || (str == null) || (str == "")))
+                {
+                    name.BackColor = System.Drawing.Color.FromArgb(255, 60, 6);
+                    FalseWrite = true;
+                    return;
+                }
+            }
+            if (name.Text == "0")
+            {
+                name.BackColor = System.Drawing.Color.FromArgb(255, 60, 6);
+                FalseWrite = true;
+                return;
+            }
+            name.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
+            FalseWrite = false;
+
         }
     }
 }
